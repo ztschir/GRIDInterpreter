@@ -1,0 +1,259 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E01980F214F1784800E22D64 /* GRIDInterpreter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E01980F114F1784800E22D64 /* GRIDInterpreter.cpp */; };
+		E046983B14E99E2000C04B45 /* TableColumnValues.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E046983A14E99E2000C04B45 /* TableColumnValues.cpp */; };
+		E046984214EAC2EC00C04B45 /* TableColumns.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E046984114EAC2EC00C04B45 /* TableColumns.cpp */; };
+		E060D56014E0E81A0040F31D /* GRIDInterpreter.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = E060D55F14E0E81A0040F31D /* GRIDInterpreter.1 */; };
+		E060D6B014E231720040F31D /* libmysqlcppconn.1.0.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E060D6AD14E231720040F31D /* libmysqlcppconn.1.0.5.dylib */; };
+		E060D6B114E231720040F31D /* libmysqlcppconn.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E060D6AE14E231720040F31D /* libmysqlcppconn.1.dylib */; };
+		E060D6B214E231720040F31D /* libmysqlcppconn.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E060D6AF14E231720040F31D /* libmysqlcppconn.dylib */; };
+		E0B6A02E14FD83B0003D435D /* DataFileReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0B6A02D14FD83B0003D435D /* DataFileReader.cpp */; };
+		E0F1B57314EC200D009B5421 /* ConfigFileReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0F1B57214EC200D009B5421 /* ConfigFileReader.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E060D55714E0E81A0040F31D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				E060D56014E0E81A0040F31D /* GRIDInterpreter.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		E01980F114F1784800E22D64 /* GRIDInterpreter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GRIDInterpreter.cpp; sourceTree = "<group>"; };
+		E046983914E99CB700C04B45 /* TableColumnValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableColumnValues.h; sourceTree = "<group>"; };
+		E046983A14E99E2000C04B45 /* TableColumnValues.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TableColumnValues.cpp; sourceTree = "<group>"; };
+		E046984114EAC2EC00C04B45 /* TableColumns.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TableColumns.cpp; sourceTree = "<group>"; };
+		E046984314EAC2F700C04B45 /* TableColumns.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableColumns.h; sourceTree = "<group>"; };
+		E04AEB3F14F2D5D0002A66CB /* ConfigValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigValues.h; sourceTree = "<group>"; };
+		E060D55914E0E81A0040F31D /* GRIDInterpreter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GRIDInterpreter; sourceTree = BUILT_PRODUCTS_DIR; };
+		E060D55F14E0E81A0040F31D /* GRIDInterpreter.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = GRIDInterpreter.1; sourceTree = "<group>"; };
+		E060D6AD14E231720040F31D /* libmysqlcppconn.1.0.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmysqlcppconn.1.0.5.dylib; path = usr/local/lib/libmysqlcppconn.1.0.5.dylib; sourceTree = SDKROOT; };
+		E060D6AE14E231720040F31D /* libmysqlcppconn.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmysqlcppconn.1.dylib; path = usr/local/lib/libmysqlcppconn.1.dylib; sourceTree = SDKROOT; };
+		E060D6AF14E231720040F31D /* libmysqlcppconn.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmysqlcppconn.dylib; path = usr/local/lib/libmysqlcppconn.dylib; sourceTree = SDKROOT; };
+		E0A20F3A14FC3293009BD594 /* TypeIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeIdentifiers.h; sourceTree = "<group>"; };
+		E0B6A02D14FD83B0003D435D /* DataFileReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DataFileReader.cpp; sourceTree = "<group>"; };
+		E0B6A03014FD83BD003D435D /* DataFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFileReader.h; sourceTree = "<group>"; };
+		E0F1B57214EC200D009B5421 /* ConfigFileReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConfigFileReader.cpp; sourceTree = "<group>"; };
+		E0F1B57514EC2018009B5421 /* ConfigFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigFileReader.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E060D55614E0E81A0040F31D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E060D6B014E231720040F31D /* libmysqlcppconn.1.0.5.dylib in Frameworks */,
+				E060D6B114E231720040F31D /* libmysqlcppconn.1.dylib in Frameworks */,
+				E060D6B214E231720040F31D /* libmysqlcppconn.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E060D54E14E0E81A0040F31D = {
+			isa = PBXGroup;
+			children = (
+				E060D6AD14E231720040F31D /* libmysqlcppconn.1.0.5.dylib */,
+				E060D6AE14E231720040F31D /* libmysqlcppconn.1.dylib */,
+				E060D6AF14E231720040F31D /* libmysqlcppconn.dylib */,
+				E060D55C14E0E81A0040F31D /* GRIDInterpreter */,
+				E060D55A14E0E81A0040F31D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E060D55A14E0E81A0040F31D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E060D55914E0E81A0040F31D /* GRIDInterpreter */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E060D55C14E0E81A0040F31D /* GRIDInterpreter */ = {
+			isa = PBXGroup;
+			children = (
+				E060D55F14E0E81A0040F31D /* GRIDInterpreter.1 */,
+				E046983914E99CB700C04B45 /* TableColumnValues.h */,
+				E046983A14E99E2000C04B45 /* TableColumnValues.cpp */,
+				E046984314EAC2F700C04B45 /* TableColumns.h */,
+				E046984114EAC2EC00C04B45 /* TableColumns.cpp */,
+				E0F1B57514EC2018009B5421 /* ConfigFileReader.h */,
+				E0F1B57214EC200D009B5421 /* ConfigFileReader.cpp */,
+				E01980F114F1784800E22D64 /* GRIDInterpreter.cpp */,
+				E04AEB3F14F2D5D0002A66CB /* ConfigValues.h */,
+				E0A20F3A14FC3293009BD594 /* TypeIdentifiers.h */,
+				E0B6A03014FD83BD003D435D /* DataFileReader.h */,
+				E0B6A02D14FD83B0003D435D /* DataFileReader.cpp */,
+			);
+			path = GRIDInterpreter;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E060D55814E0E81A0040F31D /* GRIDInterpreter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E060D56314E0E81A0040F31D /* Build configuration list for PBXNativeTarget "GRIDInterpreter" */;
+			buildPhases = (
+				E060D55514E0E81A0040F31D /* Sources */,
+				E060D55614E0E81A0040F31D /* Frameworks */,
+				E060D55714E0E81A0040F31D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GRIDInterpreter;
+			productName = GRIDInterpreter;
+			productReference = E060D55914E0E81A0040F31D /* GRIDInterpreter */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E060D55014E0E81A0040F31D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = E060D55314E0E81A0040F31D /* Build configuration list for PBXProject "GRIDInterpreter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E060D54E14E0E81A0040F31D;
+			productRefGroup = E060D55A14E0E81A0040F31D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E060D55814E0E81A0040F31D /* GRIDInterpreter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E060D55514E0E81A0040F31D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E046983B14E99E2000C04B45 /* TableColumnValues.cpp in Sources */,
+				E046984214EAC2EC00C04B45 /* TableColumns.cpp in Sources */,
+				E0F1B57314EC200D009B5421 /* ConfigFileReader.cpp in Sources */,
+				E01980F214F1784800E22D64 /* GRIDInterpreter.cpp in Sources */,
+				E0B6A02E14FD83B0003D435D /* DataFileReader.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E060D56114E0E81A0040F31D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LIBRARY_SEARCH_PATHS = /usr/local/include;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E060D56214E0E81A0040F31D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LIBRARY_SEARCH_PATHS = /usr/local/include;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E060D56414E0E81A0040F31D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)/usr/lib/i686-apple-darwin11/4.2.1\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E060D56514E0E81A0040F31D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)/usr/lib/i686-apple-darwin11/4.2.1\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E060D55314E0E81A0040F31D /* Build configuration list for PBXProject "GRIDInterpreter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E060D56114E0E81A0040F31D /* Debug */,
+				E060D56214E0E81A0040F31D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E060D56314E0E81A0040F31D /* Build configuration list for PBXNativeTarget "GRIDInterpreter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E060D56414E0E81A0040F31D /* Debug */,
+				E060D56514E0E81A0040F31D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E060D55014E0E81A0040F31D /* Project object */;
+}
