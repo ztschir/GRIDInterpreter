@@ -46,6 +46,10 @@
 		E0A20F3A14FC3293009BD594 /* TypeIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeIdentifiers.h; sourceTree = "<group>"; };
 		E0B6A02D14FD83B0003D435D /* DataFileReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DataFileReader.cpp; sourceTree = "<group>"; };
 		E0B6A03014FD83BD003D435D /* DataFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFileReader.h; sourceTree = "<group>"; };
+		E0B8A28F1503F557006B0866 /* libmysqlcppconn.so.1.0.5 */ = {isa = PBXFileReference; lastKnownFileType = file; name = libmysqlcppconn.so.1.0.5; path = GRIDInterpreter/lib/libmysqlcppconn.so.1.0.5; sourceTree = "<group>"; };
+		E0B8A2901503F558006B0866 /* libmysqlcppconn.so.1.0.5 */ = {isa = PBXFileReference; lastKnownFileType = file; name = libmysqlcppconn.so.1.0.5; path = GRIDInterpreter/lib/libmysqlcppconn.so.1.0.5; sourceTree = "<group>"; };
+		E0B8A2911503F558006B0866 /* libmysqlcppconn.so.1.0.5 */ = {isa = PBXFileReference; lastKnownFileType = file; name = libmysqlcppconn.so.1.0.5; path = GRIDInterpreter/lib/libmysqlcppconn.so.1.0.5; sourceTree = "<group>"; };
+		E0B8A2931503F572006B0866 /* gridinterpreter.config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = gridinterpreter.config; path = "GRIDInterpreter-emglmpfbafgblxfgokryjcqkrziw/Build/Products/Debug/gridinterpreter.config"; sourceTree = "<group>"; };
 		E0F1B57214EC200D009B5421 /* ConfigFileReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConfigFileReader.cpp; sourceTree = "<group>"; };
 		E0F1B57514EC2018009B5421 /* ConfigFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigFileReader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +71,10 @@
 		E060D54E14E0E81A0040F31D = {
 			isa = PBXGroup;
 			children = (
+				E0B8A2931503F572006B0866 /* gridinterpreter.config */,
+				E0B8A28F1503F557006B0866 /* libmysqlcppconn.so.1.0.5 */,
+				E0B8A2901503F558006B0866 /* libmysqlcppconn.so.1.0.5 */,
+				E0B8A2911503F558006B0866 /* libmysqlcppconn.so.1.0.5 */,
 				E060D6AD14E231720040F31D /* libmysqlcppconn.1.0.5.dylib */,
 				E060D6AE14E231720040F31D /* libmysqlcppconn.1.dylib */,
 				E060D6AF14E231720040F31D /* libmysqlcppconn.dylib */,
@@ -129,6 +137,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Radio Navigation Lab";
 			};
 			buildConfigurationList = E060D55314E0E81A0040F31D /* Build configuration list for PBXProject "GRIDInterpreter" */;
 			compatibilityVersion = "Xcode 3.2";

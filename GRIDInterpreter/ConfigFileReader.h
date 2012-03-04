@@ -2,18 +2,14 @@
 //  ConfigFileReader.h
 //  GRIDInterpreter
 //
+//  The single purpose of this class is to read the config file.
+//
 //  Created by Zachary Tschirhart on 2/15/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Radio Navigation Lab. All rights reserved.
 //
 
 #ifndef GRIDInterpreter_ConfigFileReader_h
 #define GRIDInterpreter_ConfigFileReader_h
-
-//#include <iostream>
-//#include <string>
-//#include <sstream>
-//#include <map>
-//#include <fstream>
 
 #include "TypeIdentifiers.h"
 

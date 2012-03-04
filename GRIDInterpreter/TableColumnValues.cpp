@@ -3,7 +3,7 @@
 //  GRIDInterpreter
 //
 //  Created by Zachary Tschirhart on 2/13/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Radio Navigation Lab. All rights reserved.
 //
 
 #include "TableColumnValues.h"
@@ -27,8 +27,6 @@ TableColumnValues::TableColumnValues(string columnNameIn, char valueTypeIn) : co
         case STRING_VALUE:{
             stringValues = new list<string>();
         }
-        default:
-            return false;
     }
 }
 

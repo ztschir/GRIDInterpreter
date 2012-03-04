@@ -3,14 +3,15 @@
 //  GRIDInterpreter
 //
 //  Created by Zachary Tschirhart on 2/28/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Radio Navigation Lab. All rights reserved.
 //
 
 #include "DataFileReader.h"  
 
 using namespace std;
 
-DataFileReader::DataFileReader(string fileName, char seperatorValueIn, TableColumns& tableColumnsIn) : seperatorValue(seperatorValueIn), tableColumns(tableColumnsIn)
+DataFileReader::DataFileReader(string fileName, char seperatorValueIn, TableColumns& tableColumnsIn) 
+    : seperatorValue(seperatorValueIn), tableColumns(tableColumnsIn)
 {
     this->file = fopen(fileName.c_str(), "r");
     ConfigValues config;
@@ -24,10 +25,10 @@ int DataFileReader::importFile(){
     if (file == NULL) perror ("Error opening file");
     else
     {
+        int size = tableColumns.getNumberOfColumns();
+        int row = 1;
         while (!feof(file))
         {
-            int size = tableColumns.getNumberOfColumns();
-            
             for(int i = 0; i < size; i++){
                 
                 TableColumnValues column = tableColumns.getColumnValues(i);
@@ -36,7 +37,7 @@ int DataFileReader::importFile(){
                         int intValue;
                         if(EOF == fscanf(file, " %d ", &intValue))
                         {
-                            cout << "Malformed Int column" << endl;
+                            cout << "Malformed Int column: " << i << " row: " << row << " , replacing with zero" << endl;
                             numberErrorRows++;
                             int replace = 0;
                             column.addValue(replace);
@@ -51,7 +52,7 @@ int DataFileReader::importFile(){
                         double doubleValue;
                         if(EOF == fscanf(file, " %lf ", &doubleValue))
                         {
-                            cout << "Malformed Double column" << endl;
+                            cout << "Malformed Double column: " << i << " row: " << row << " , replacing with zero" << endl;
                             numberErrorRows++;
                             double replace = 0;
                             column.addValue(replace);
@@ -65,7 +66,7 @@ int DataFileReader::importFile(){
                         float floatValue;
                         if(EOF == fscanf(file, " %f ", &floatValue))
                         {
-                            cout << "Malformed Float column" << endl;
+                            cout << "Malformed Float column: " << i << " row: " << row << " , replacing with zero" << endl;
                             numberErrorRows++;
                             float replace = 0;
                             column.addValue(replace);
@@ -84,6 +85,7 @@ int DataFileReader::importFile(){
                     }
                 }
             }
+            row++;
         }
         fclose (file);
     }

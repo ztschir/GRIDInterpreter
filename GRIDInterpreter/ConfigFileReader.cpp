@@ -3,7 +3,7 @@
 //  GRIDInterpreter
 //
 //  Created by Zachary Tschirhart on 2/15/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Radio Navigation Lab. All rights reserved.
 //
 
 #include "ConfigFileReader.h"
@@ -19,7 +19,7 @@ template <typename T> T Convert::string_to_T(string const &val) {
 	istringstream istr(val);
 	T returnVal;
 	if (!(istr >> returnVal))
-		exitWithError("CFG: Not a valid " + (string)typeid(T).name() + " received!\n");
+		exitWithError("Config: Not a valid " + (string)typeid(T).name() + " received!\n");
        
 	return returnVal;
 }

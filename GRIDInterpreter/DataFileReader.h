@@ -2,8 +2,12 @@
 //  DataFileReader.h
 //  GRIDInterpreter
 //
+//  The DataFileReader class is to parse the data files that are given
+//  and to insert all the rows in the passed in TableColumns object.
+//
+//
 //  Created by Zachary Tschirhart on 2/28/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Radio Navigation Lab. All rights reserved.
 //
 
 #ifndef GRIDInterpreter_DataFileReader_h

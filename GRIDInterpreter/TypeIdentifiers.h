@@ -2,8 +2,11 @@
 //  TypeIdentifiers.h
 //  GRIDInterpreter
 //
+//  Hold all of the includes in a single header file, and define value types.
+//
+//
 //  Created by Zachary Tschirhart on 2/27/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Radio Navigation Lab. All rights reserved.
 //
 
 #ifndef GRIDInterpreter_TypeIdentifiers_h

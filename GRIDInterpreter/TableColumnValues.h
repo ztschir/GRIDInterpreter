@@ -2,16 +2,17 @@
 //  TableColumnValues.h
 //  GRIDInterpreter
 //
+//  The TableColumnValues class holds a single columns worth of data. 
+//  There are several ways to access set and get the data for each datatype,
+//  but just remember that each datatype is a linked list, so O(1) add, delete, 
+//  and access to first or last value. It's O(n) for access to any other value in the set.
+//
 //  Created by Zachary Tschirhart on 2/13/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Radio Navigation Lab. All rights reserved.
 //
 
 #ifndef GRIDInterpreter_TableColumnValue_h
 #define GRIDInterpreter_TableColumnValue_h
-
-//#include <iostream>
-//#include <list>
-//#include <string>
 
 #include "TypeIdentifiers.h"
 

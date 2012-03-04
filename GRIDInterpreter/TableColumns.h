@@ -2,15 +2,15 @@
 //  TableColumns.h
 //  GRIDInterpreter
 //
+//  The TableColumns class holds all of the TableColumnValues for a single table
+//  that you wish to access.
+//
 //  Created by Zachary Tschirhart on 2/14/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Radio Navigation Lab. All rights reserved.
 //
 
 #ifndef GRIDInterpreter_TableColumns_h
 #define GRIDInterpreter_TableColumns_h
-
-
-
 
 #include "TableColumnValues.h"
 #include "ConfigValues.h"
