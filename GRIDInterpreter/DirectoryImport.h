@@ -17,14 +17,16 @@
 class DirectoryImport{
     
 public:
-    void importChannelData(ConfigValues& configFile);
-    void importIonoData(ConfigValues& configFile);
-    void importNavSolData(ConfigValues& configFile);
-    void importSCIntData(ConfigValues& configFile);
-    void importTXInfoData(ConfigValues& configFile);
+    DirectoryImport(ConfigValues& configFileIn);
 
 private:
+    void importChannelData();
+    void importIonoData();
+    void importNavSolData();
+    void importSCIntData();
+    void importTXInfoData();
     
+    ConfigValues configFile;
 };
 
 #endif

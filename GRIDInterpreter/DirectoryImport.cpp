@@ -10,8 +10,18 @@
 
 #include <iostream>
 
+DirectoryImport::DirectoryImport(ConfigValues& configFileIn){
+    configFile = configFileIn;
+    
+    importChannelData();
+    importIonoData();
+    importNavSolData();
+    importSCIntData();
+    importTXInfoData();
+}
 
-void DirectoryImport::importChannelData(ConfigValues& configFile){
+
+void DirectoryImport::importChannelData(){
     TableColumns channel = TableColumns(CHANNEL_COLUMN_NAME, configFile);
     channel.addTableColumnInt("receiverWeekNumber");
     channel.addTableColumnDouble("receiverSecondsOfWeek");
@@ -33,7 +43,7 @@ void DirectoryImport::importChannelData(ConfigValues& configFile){
     channel.writeValuesToDB();
 }
 
-void DirectoryImport::importIonoData(ConfigValues& configFile){
+void DirectoryImport::importIonoData(){
     TableColumns iono = TableColumns(IONOSHPHERE_COLUMN_NAME, configFile);
     iono.addTableColumnInt("offsetWeekNumber");
     iono.addTableColumnInt("offsetWholeSecondsOfWeek");
@@ -47,7 +57,7 @@ void DirectoryImport::importIonoData(ConfigValues& configFile){
     iono.writeValuesToDB();
 }
 
-void DirectoryImport::importNavSolData(ConfigValues& configFile){
+void DirectoryImport::importNavSolData(){
     TableColumns navSol = TableColumns(NAVIGATION_SOLUTION_COLUMN_NAME, configFile);
     navSol.addTableColumnInt("offsetWeekNumber");
     navSol.addTableColumnInt("offsetWholeSecondsOfWeek");
@@ -68,7 +78,7 @@ void DirectoryImport::importNavSolData(ConfigValues& configFile){
     navSol.writeValuesToDB();
 }
 
-void DirectoryImport::importSCIntData(ConfigValues& configFile){
+void DirectoryImport::importSCIntData(){
     TableColumns scInt = TableColumns(SCINTILLATION_COLUMN_NAME, configFile);
     scInt.addTableColumnInt("offsetWeekNumber");
     scInt.addTableColumnInt("offsetWholeSecondsOfWeek");
@@ -92,7 +102,7 @@ void DirectoryImport::importSCIntData(ConfigValues& configFile){
     scInt.writeValuesToDB();
 }
 
-void DirectoryImport::importTXInfoData(ConfigValues& configFile){
+void DirectoryImport::importTXInfoData(){
     TableColumns txInfo = TableColumns(TRANSMITTER_INFO_COLUMN_NAME, configFile);
     txInfo.addTableColumnInt("offsetWeekNumber");
     txInfo.addTableColumnInt("offsetWholeSecondsOfWeek");
