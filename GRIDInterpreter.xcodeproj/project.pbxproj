@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E0140AA71505940C00DF2874 /* makefile in Sources */ = {isa = PBXBuildFile; fileRef = E0140AA61505940C00DF2874 /* makefile */; };
+		E0140AAF1505CBE300DF2874 /* DirectoryImport.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0140AAE1505CBE300DF2874 /* DirectoryImport.cpp */; };
 		E01980F214F1784800E22D64 /* GRIDInterpreter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E01980F114F1784800E22D64 /* GRIDInterpreter.cpp */; };
 		E046983B14E99E2000C04B45 /* TableColumnValues.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E046983A14E99E2000C04B45 /* TableColumnValues.cpp */; };
 		E046984214EAC2EC00C04B45 /* TableColumns.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E046984114EAC2EC00C04B45 /* TableColumns.cpp */; };
@@ -34,6 +35,8 @@
 
 /* Begin PBXFileReference section */
 		E0140AA61505940C00DF2874 /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
+		E0140AAD1505CBD500DF2874 /* DirectoryImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectoryImport.h; sourceTree = "<group>"; };
+		E0140AAE1505CBE300DF2874 /* DirectoryImport.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DirectoryImport.cpp; sourceTree = "<group>"; };
 		E01980F114F1784800E22D64 /* GRIDInterpreter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GRIDInterpreter.cpp; sourceTree = "<group>"; };
 		E046983914E99CB700C04B45 /* TableColumnValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableColumnValues.h; sourceTree = "<group>"; };
 		E046983A14E99E2000C04B45 /* TableColumnValues.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TableColumnValues.cpp; sourceTree = "<group>"; };
@@ -105,19 +108,21 @@
 		E060D55C14E0E81A0040F31D /* GRIDInterpreter */ = {
 			isa = PBXGroup;
 			children = (
+				E0140AA61505940C00DF2874 /* makefile */,
 				E060D55F14E0E81A0040F31D /* GRIDInterpreter.1 */,
+				E01980F114F1784800E22D64 /* GRIDInterpreter.cpp */,
 				E046983914E99CB700C04B45 /* TableColumnValues.h */,
 				E046983A14E99E2000C04B45 /* TableColumnValues.cpp */,
 				E046984314EAC2F700C04B45 /* TableColumns.h */,
 				E046984114EAC2EC00C04B45 /* TableColumns.cpp */,
 				E0F1B57514EC2018009B5421 /* ConfigFileReader.h */,
 				E0F1B57214EC200D009B5421 /* ConfigFileReader.cpp */,
-				E01980F114F1784800E22D64 /* GRIDInterpreter.cpp */,
 				E04AEB3F14F2D5D0002A66CB /* ConfigValues.h */,
 				E0A20F3A14FC3293009BD594 /* TypeIdentifiers.h */,
 				E0B6A03014FD83BD003D435D /* DataFileReader.h */,
 				E0B6A02D14FD83B0003D435D /* DataFileReader.cpp */,
-				E0140AA61505940C00DF2874 /* makefile */,
+				E0140AAD1505CBD500DF2874 /* DirectoryImport.h */,
+				E0140AAE1505CBE300DF2874 /* DirectoryImport.cpp */,
 			);
 			path = GRIDInterpreter;
 			sourceTree = "<group>";
@@ -179,6 +184,7 @@
 				E01980F214F1784800E22D64 /* GRIDInterpreter.cpp in Sources */,
 				E0B6A02E14FD83B0003D435D /* DataFileReader.cpp in Sources */,
 				E0140AA71505940C00DF2874 /* makefile in Sources */,
+				E0140AAF1505CBE300DF2874 /* DirectoryImport.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

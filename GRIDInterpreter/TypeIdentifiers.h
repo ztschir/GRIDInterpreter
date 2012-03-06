@@ -35,4 +35,22 @@ const char FLOAT_VALUE = 2;
 const char DOUBLE_VALUE = 3;
 const char STRING_VALUE = 4;
 
+#define CONFIG_FILE_NAME "gridinterpreter.config"
+#define CONFIG_DB_NAME "db_name"
+#define CONFIG_DB_HOSTNAME "db_hostname"
+#define CONFIG_DB_USERNAME "db_username"
+#define CONFIG_DB_PASSWORD "db_password"
+
+#define CHANNEL_COLUMN_NAME "channel"
+#define IONOSHPHERE_COLUMN_NAME "iono"
+#define NAVIGATION_SOLUTION_COLUMN_NAME "navigationSolution"
+#define SCINTILLATION_COLUMN_NAME "scintillation"
+#define TRANSMITTER_INFO_COLUMN_NAME "transmitterInfo"
+
+#define CHANNEL_FILENAME "channel.log"
+#define IONOSHPHERE_FILENAME "iono.log"
+#define NAVIGATION_SOLUTION_FILENAME "navsol.log"
+#define SCINTILLATION_FILENAME "scint.log"
+#define TRANSMITTER_INFO_FILENAME "txinfo.log"
+
 #endif
