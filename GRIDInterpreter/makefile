@@ -1,6 +1,6 @@
 CC=g++
 CFLAGS=-c -Wall
-LDFLAGS= -L ./lib/
+LDFLAGS=
 SOURCES= GRIDInterpreter.cpp TableColumnValues.cpp TableColumns.cpp ConfigFileReader.cpp DataFileReader.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=GRIDInterpreter

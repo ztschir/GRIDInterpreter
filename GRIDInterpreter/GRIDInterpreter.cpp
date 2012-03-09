@@ -12,9 +12,10 @@
 
 #include "TableColumns.h"
 #include "ConfigFileReader.h"
-#include "TableColumnValues.h"
 #include "ConfigValues.h"
 #include "DataFileReader.h"
+
+#include "DirectoryImport.h"
 
 using namespace std;
 
@@ -25,12 +26,7 @@ int main(int argc, const char **argv)
 {    
 
     ConfigValues configFile = getConfigFileSettings();
-    // TODO: DirectoryImport
-    //importChannelData(configFile);
-    //importIonoData(configFile);
-    //importNavSolData(configFile);
-    //importSCIntData(configFile);
-    //importTXInfoData(configFile);
+    DirectoryImport importDirectories = DirectoryImport(configFile);
 }
 
 ConfigValues getConfigFileSettings(){

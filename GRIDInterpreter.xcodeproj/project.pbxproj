@@ -48,6 +48,21 @@
 		E060D6AD14E231720040F31D /* libmysqlcppconn.1.0.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmysqlcppconn.1.0.5.dylib; path = usr/local/lib/libmysqlcppconn.1.0.5.dylib; sourceTree = SDKROOT; };
 		E060D6AE14E231720040F31D /* libmysqlcppconn.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmysqlcppconn.1.dylib; path = usr/local/lib/libmysqlcppconn.1.dylib; sourceTree = SDKROOT; };
 		E060D6AF14E231720040F31D /* libmysqlcppconn.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmysqlcppconn.dylib; path = usr/local/lib/libmysqlcppconn.dylib; sourceTree = SDKROOT; };
+		E0882E7B15098BB600A867EE /* build_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = build_config.h; sourceTree = "<group>"; };
+		E0882E7C15098BB600A867EE /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		E0882E7D15098BB600A867EE /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		E0882E7E15098BB600A867EE /* config.h.cm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.h.cm; sourceTree = "<group>"; };
+		E0882E7F15098BB600A867EE /* connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = connection.h; sourceTree = "<group>"; };
+		E0882E8015098BB600A867EE /* datatype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = datatype.h; sourceTree = "<group>"; };
+		E0882E8115098BB600A867EE /* driver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = driver.h; sourceTree = "<group>"; };
+		E0882E8215098BB600A867EE /* exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exception.h; sourceTree = "<group>"; };
+		E0882E8315098BB600A867EE /* metadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = metadata.h; sourceTree = "<group>"; };
+		E0882E8415098BB600A867EE /* parameter_metadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parameter_metadata.h; sourceTree = "<group>"; };
+		E0882E8515098BB600A867EE /* prepared_statement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prepared_statement.h; sourceTree = "<group>"; };
+		E0882E8615098BB600A867EE /* resultset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resultset.h; sourceTree = "<group>"; };
+		E0882E8715098BB600A867EE /* resultset_metadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resultset_metadata.h; sourceTree = "<group>"; };
+		E0882E8815098BB600A867EE /* statement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = statement.h; sourceTree = "<group>"; };
+		E0882E8915098BB600A867EE /* warning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = warning.h; sourceTree = "<group>"; };
 		E0A20F3A14FC3293009BD594 /* TypeIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeIdentifiers.h; sourceTree = "<group>"; };
 		E0B6A02D14FD83B0003D435D /* DataFileReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DataFileReader.cpp; sourceTree = "<group>"; };
 		E0B6A03014FD83BD003D435D /* DataFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFileReader.h; sourceTree = "<group>"; };
@@ -90,6 +105,7 @@
 		E060D54E14E0E81A0040F31D = {
 			isa = PBXGroup;
 			children = (
+				E0882E7A15098BB600A867EE /* cppconn */,
 				E014E3D215048E9F00DF2874 /* lib */,
 				E0B8A2931503F572006B0866 /* gridinterpreter.config */,
 				E060D55C14E0E81A0040F31D /* GRIDInterpreter */,
@@ -125,6 +141,28 @@
 				E0140AAE1505CBE300DF2874 /* DirectoryImport.cpp */,
 			);
 			path = GRIDInterpreter;
+			sourceTree = "<group>";
+		};
+		E0882E7A15098BB600A867EE /* cppconn */ = {
+			isa = PBXGroup;
+			children = (
+				E0882E7B15098BB600A867EE /* build_config.h */,
+				E0882E7C15098BB600A867EE /* CMakeLists.txt */,
+				E0882E7D15098BB600A867EE /* config.h */,
+				E0882E7E15098BB600A867EE /* config.h.cm */,
+				E0882E7F15098BB600A867EE /* connection.h */,
+				E0882E8015098BB600A867EE /* datatype.h */,
+				E0882E8115098BB600A867EE /* driver.h */,
+				E0882E8215098BB600A867EE /* exception.h */,
+				E0882E8315098BB600A867EE /* metadata.h */,
+				E0882E8415098BB600A867EE /* parameter_metadata.h */,
+				E0882E8515098BB600A867EE /* prepared_statement.h */,
+				E0882E8615098BB600A867EE /* resultset.h */,
+				E0882E8715098BB600A867EE /* resultset_metadata.h */,
+				E0882E8815098BB600A867EE /* statement.h */,
+				E0882E8915098BB600A867EE /* warning.h */,
+			);
+			path = cppconn;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

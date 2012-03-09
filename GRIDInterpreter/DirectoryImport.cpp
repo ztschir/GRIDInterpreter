@@ -7,17 +7,28 @@
 //
 
 #include "DirectoryImport.h"
-
-#include <iostream>
+#include <sys/types.h>
+#include <dirent.h>
 
 DirectoryImport::DirectoryImport(ConfigValues& configFileIn){
     configFile = configFileIn;
+    
+}
+
+void DirectoryImport::startImport(){
     
     importChannelData();
     importIonoData();
     importNavSolData();
     importSCIntData();
     importTXInfoData();
+}
+
+int getdir (string dir, vector<string> &files){
+    DIR *dp;
+    struct dirent *dirp;
+    
+    
 }
 
 
