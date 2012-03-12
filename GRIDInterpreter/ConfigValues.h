@@ -13,7 +13,7 @@ using namespace std;
 
 class ConfigValues{
 public:
-    bool isValid;
+    bool deleteLogFileAfterImport;
     string topLevelDirectory;
     string dbNameValue;
     string dbHostnameValue;

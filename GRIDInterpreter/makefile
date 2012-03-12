@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-c -Wall
 LDFLAGS=
-SOURCES= GRIDInterpreter.cpp TableColumnValues.cpp TableColumns.cpp ConfigFileReader.cpp DataFileReader.cpp DirectoryImport.cpp
+SOURCES= GRIDInterpreter.cpp TableColumnValues.cpp TableColumns.cpp ConfigFileReader.cpp DataFileReader.cpp Importer.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=GRIDInterpreter
 

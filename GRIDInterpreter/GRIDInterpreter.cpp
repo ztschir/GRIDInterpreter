@@ -31,10 +31,8 @@ int main(int argc, const char **argv)
 ConfigValues getConfigFileSettings(){
     
     ConfigValues configFile;
-    configFile.isValid = true;
     
     ConfigFileReader cfg = ConfigFileReader(CONFIG_FILE_NAME);
-    
 	if(cfg.keyExists(CONFIG_DB_NAME)){
         configFile.dbNameValue = cfg.getValueOfKey(CONFIG_DB_NAME);
     }
@@ -50,13 +48,23 @@ ConfigValues getConfigFileSettings(){
     if(cfg.keyExists(TOP_LEVEL_DIRECOTRY)){
         configFile.topLevelDirectory = cfg.getValueOfKey(TOP_LEVEL_DIRECOTRY);
     }
+    if(cfg.keyExists(DELETE_LOG_FILES_AFTER_IMPORT)){
+        string deleteValStr = cfg.getValueOfKey(DELETE_LOG_FILES_AFTER_IMPORT);
+        int deleteVal;
+        
+        stringstream convert(deleteValStr);
+        if (!(convert >> deleteVal)){
+            cout << "Invalid value for delete files after import option" << endl;
+            exit(1);
+        }
+        configFile.deleteLogFileAfterImport = deleteVal;
+    }
     if(configFile.dbNameValue.empty() || 
        configFile.dbHostnameValue.empty() || 
        configFile.dbUsernameValue.empty() || 
        configFile.dbPasswordValue.empty() ||
        configFile.topLevelDirectory.empty()){
         cout << "Invalid .config file";
-        configFile.isValid = false;
         exit(1);
     }
     return configFile;

@@ -21,6 +21,10 @@
 #include <cppconn/resultset_metadata.h>
 #include <cppconn/statement.h>
 
+#include <sys/types.h>
+#include <dirent.h>
+#include <sys/stat.h>
+
 #include <iterator>
 #include <fstream>
 #include <string>
@@ -29,7 +33,6 @@
 #include <map>
 #include <vector>
 #include <sstream>
-
 
 const char INT_VALUE = 1;
 const char FLOAT_VALUE = 2;
@@ -42,6 +45,7 @@ const char STRING_VALUE = 4;
 #define CONFIG_DB_USERNAME "db_username"
 #define CONFIG_DB_PASSWORD "db_password"
 #define TOP_LEVEL_DIRECOTRY "top_level_directory"
+#define DELETE_LOG_FILES_AFTER_IMPORT "delete_log_file_after_import"
 
 #define LENGTH_OF_GRIDRX_ID 3
 #define PREFIX_FOR_DIRECTORIES "GRID"

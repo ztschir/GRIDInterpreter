@@ -7,9 +7,6 @@
 //
 
 #include "Importer.h"
-#include <sys/types.h>
-#include <dirent.h>
-#include <sys/stat.h>
 
 Importer::Importer(ConfigValues& configFileIn){
     configFile = configFileIn;
@@ -40,6 +37,11 @@ void Importer::startImport(){
             importNavSolData(receiverID, fullDirectoryPath);
             importSCIntData(receiverID, fullDirectoryPath);
             importTXInfoData(receiverID, fullDirectoryPath);
+            
+            // This won't remove the directory unless it's empty.
+            // TODO: Not deleting even when empty
+            if(configFile.deleteLogFileAfterImport)
+                rmdir(directoryName.c_str());
         }
     }
 }
@@ -67,6 +69,7 @@ int Importer::getdir(string dir, vector<string> &files)
 
 
 void Importer::importChannelData(int receiverID, string directoryPath){
+    string fullPathToFile = directoryPath + CHANNEL_FILENAME;
     TableColumns channel = TableColumns(CHANNEL_COLUMN_NAME, configFile);
     channel.addTableColumnInt("receiverID", false, receiverID);
     channel.addTableColumnInt("receiverWeekNumber");
@@ -74,6 +77,7 @@ void Importer::importChannelData(int receiverID, string directoryPath){
     channel.addTableColumnInt("offsetWeekNumber");
     channel.addTableColumnInt("offsetWholeSecondsOfWeek");
     channel.addTableColumnDouble("offsetFractionalSecond");
+    
     channel.addTableColumnDouble("apparentDoppler");
     channel.addTableColumnDouble("beatCarrierPhase");
     channel.addTableColumnDouble("pseudorange");
@@ -84,27 +88,36 @@ void Importer::importChannelData(int receiverID, string directoryPath){
     channel.addTableColumnInt("signalTypeID");
     channel.addTableColumnInt("transmitterID");
     
-    DataFileReader dataFile = DataFileReader(receiverID, directoryPath + CHANNEL_FILENAME, channel);
+    DataFileReader dataFile = DataFileReader(receiverID, fullPathToFile, channel);
     dataFile.importFile();
     channel.writeValuesToDB();
+    
+    if(configFile.deleteLogFileAfterImport)
+        remove(fullPathToFile.c_str());
 }
 
 void Importer::importIonoData(int receiverID, string directoryPath){
+    string fullPathToFile = directoryPath + IONOSHPHERE_FILENAME;
     TableColumns iono = TableColumns(IONOSHPHERE_COLUMN_NAME, configFile);
     iono.addTableColumnInt("receiverID", false, receiverID);
     iono.addTableColumnInt("offsetWeekNumber");
     iono.addTableColumnInt("offsetWholeSecondsOfWeek");
     iono.addTableColumnDouble("offsetFractionalSecond");
+    
     iono.addTableColumnDouble("pseudorangeDerivedSTEC");
     iono.addTableColumnDouble("pseudorangeDerivedSTECDot");
     iono.addTableColumnInt("transmitterID");
     
-    DataFileReader dataFile = DataFileReader(receiverID, directoryPath + IONOSHPHERE_FILENAME, iono);
+    DataFileReader dataFile = DataFileReader(receiverID, fullPathToFile, iono);
     dataFile.importFile();
     iono.writeValuesToDB();
+    
+    if(configFile.deleteLogFileAfterImport)
+        remove(fullPathToFile.c_str());
 }
 
 void Importer::importNavSolData(int receiverID, string directoryPath){
+    string fullPathToFile = directoryPath + NAVIGATION_SOLUTION_FILENAME;
     TableColumns navSol = TableColumns(NAVIGATION_SOLUTION_COLUMN_NAME, configFile);
     navSol.addTableColumnInt("receiverID", false, receiverID);
     navSol.addTableColumnInt("offsetWeekNumber");
@@ -121,12 +134,16 @@ void Importer::importNavSolData(int receiverID, string directoryPath){
     navSol.addTableColumnDouble("deltaReceiverClockErrorDot");
     navSol.addTableColumnInt("navigationSolverID");
     
-    DataFileReader dataFile = DataFileReader(receiverID, directoryPath + NAVIGATION_SOLUTION_FILENAME, navSol);
+    DataFileReader dataFile = DataFileReader(receiverID, fullPathToFile, navSol);
     dataFile.importFile();
     navSol.writeValuesToDB();
+    
+    if(configFile.deleteLogFileAfterImport)
+        remove(fullPathToFile.c_str());
 }
 
 void Importer::importSCIntData(int receiverID, string directoryPath){
+    string fullPathToFile = directoryPath + SCINTILLATION_FILENAME;
     TableColumns scInt = TableColumns(SCINTILLATION_COLUMN_NAME, configFile);
     scInt.addTableColumnInt("receiverID", false, receiverID);
     scInt.addTableColumnInt("offsetWeekNumber");
@@ -146,24 +163,32 @@ void Importer::importSCIntData(int receiverID, string directoryPath){
     scInt.addTableColumnInt("signalTypeID");
     scInt.addTableColumnInt("transmitterID");
     
-    DataFileReader dataFile = DataFileReader(receiverID, directoryPath + SCINTILLATION_FILENAME, scInt);
+    DataFileReader dataFile = DataFileReader(receiverID, fullPathToFile, scInt);
     dataFile.importFile();
     scInt.writeValuesToDB();
+    
+    if(configFile.deleteLogFileAfterImport)
+        remove(fullPathToFile.c_str());
 }
 
 void Importer::importTXInfoData(int receiverID, string directoryPath){
+    string fullPathToFile = directoryPath + TRANSMITTER_INFO_FILENAME;
     TableColumns txInfo = TableColumns(TRANSMITTER_INFO_COLUMN_NAME, configFile);
     txInfo.addTableColumnInt("receiverID", false, receiverID);
     txInfo.addTableColumnInt("offsetWeekNumber");
     txInfo.addTableColumnInt("offsetWholeSecondsOfWeek");
     txInfo.addTableColumnDouble("offsetFractionalSecond");
+    
     txInfo.addTableColumnDouble("azmiuth");
     txInfo.addTableColumnDouble("elevation");
     txInfo.addTableColumnInt("healthStatus");
     txInfo.addTableColumnInt("transmitterSystemID");
     txInfo.addTableColumnInt("transmitterID");
     
-    DataFileReader dataFile = DataFileReader(receiverID, directoryPath + TRANSMITTER_INFO_FILENAME, txInfo);
+    DataFileReader dataFile = DataFileReader(receiverID, fullPathToFile, txInfo);
     dataFile.importFile();
     txInfo.writeValuesToDB();
+    
+    if(configFile.deleteLogFileAfterImport)
+        remove(fullPathToFile.c_str());
 }
