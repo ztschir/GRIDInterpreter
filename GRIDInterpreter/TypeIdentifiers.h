@@ -41,6 +41,10 @@ const char STRING_VALUE = 4;
 #define CONFIG_DB_HOSTNAME "db_hostname"
 #define CONFIG_DB_USERNAME "db_username"
 #define CONFIG_DB_PASSWORD "db_password"
+#define TOP_LEVEL_DIRECOTRY "top_level_directory"
+
+#define LENGTH_OF_GRIDRX_ID 3
+#define PREFIX_FOR_DIRECTORIES "GRID"
 
 #define CHANNEL_COLUMN_NAME "channel"
 #define IONOSHPHERE_COLUMN_NAME "iono"

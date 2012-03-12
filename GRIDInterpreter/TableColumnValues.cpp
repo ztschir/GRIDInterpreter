@@ -10,7 +10,8 @@
 
 using namespace std;
 
-TableColumnValues::TableColumnValues(string columnNameIn, char valueTypeIn) : columnName(columnNameIn), valueType(valueTypeIn){
+TableColumnValues::TableColumnValues(string columnNameIn, char valueTypeIn, bool isFileReadInValueIn) : columnName(columnNameIn), valueType(valueTypeIn), isFileReadInValue(isFileReadInValueIn){
+    isFileReadInValue = isFileReadInValueIn;
     columnName = columnNameIn;
     valueType = valueTypeIn;
     
@@ -30,20 +31,23 @@ TableColumnValues::TableColumnValues(string columnNameIn, char valueTypeIn) : co
     }
 }
 
-TableColumnValues::TableColumnValues(list<int>* value) : intValues(value){
+TableColumnValues::TableColumnValues(list<int>* value, bool isFileReadInValueIn) : intValues(value){
+    isFileReadInValue = isFileReadInValueIn;
     intValues = value;
     valueType = INT_VALUE;
 }
-
-TableColumnValues::TableColumnValues(list<double>* value) : doubleValues(value){
+TableColumnValues::TableColumnValues(list<double>* value, bool isFileReadInValueIn) : doubleValues(value){
+    isFileReadInValue = isFileReadInValueIn;
     doubleValues = value;
     valueType = DOUBLE_VALUE;
 }
-TableColumnValues::TableColumnValues(list<float>* value) : floatValues(value){
+TableColumnValues::TableColumnValues(list<float>* value, bool isFileReadInValueIn) : floatValues(value){
+    isFileReadInValue = isFileReadInValueIn;
     floatValues = value;
     valueType = FLOAT_VALUE;
 }
-TableColumnValues::TableColumnValues(list<string>* value) : stringValues(value){
+TableColumnValues::TableColumnValues(list<string>* value, bool isFileReadInValueIn) : stringValues(value){
+    isFileReadInValue = isFileReadInValueIn;
     stringValues = value;
     valueType = STRING_VALUE;
 }
@@ -96,21 +100,26 @@ void TableColumnValues::addValue(string& value){
 
 
 bool TableColumnValues::isEmpty(){
-    switch (valueType){
-        case INT_VALUE:{
-            return intValues->empty();
+    if(isFileReadInValue){
+        switch (valueType){
+            case INT_VALUE:{
+                return intValues->empty();
+            }
+            case DOUBLE_VALUE:{
+                return doubleValues->empty();
+            }
+            case FLOAT_VALUE:{
+                return floatValues->empty();
+            }
+            case STRING_VALUE:{
+                return stringValues->empty();
+            }
+            default:
+                return false;
         }
-        case DOUBLE_VALUE:{
-            return doubleValues->empty();
-        }
-        case FLOAT_VALUE:{
-            return floatValues->empty();
-        }
-        case STRING_VALUE:{
-            return stringValues->empty();
-        }
-        default:
-            return false;
+    }
+    else{
+        return false;
     }
 }
 char TableColumnValues::getValueType(){
@@ -140,6 +149,10 @@ int TableColumnValues::getRowCount(){
     }
 }
 
+bool TableColumnValues::isReadInValue(){
+    return isFileReadInValue;
+}
+
 list<int>* TableColumnValues::getIntValues(){
     return intValues;
 }
@@ -151,4 +164,29 @@ list<double>* TableColumnValues::getDoubleValues(){
 }
 list<string>* TableColumnValues::getStringValues(){
     return stringValues;
+}
+
+int TableColumnValues::popTopIntValue(){
+    int value = intValues->front();
+    if(isFileReadInValue)
+        intValues->pop_front();
+    return value;
+}
+float TableColumnValues::popTopFloatValue(){
+    float value = floatValues->front();
+    if(isFileReadInValue)
+        floatValues->pop_front();
+    return value;
+}
+double TableColumnValues::popTopDoubleValue(){
+    float value = doubleValues->front();
+    if(isFileReadInValue)
+        doubleValues->pop_front();
+    return value;
+}
+string TableColumnValues::popTopStringValue(){
+    string value = stringValues->front();
+    if(isFileReadInValue)
+        stringValues->pop_front();
+    return value;
 }

@@ -15,50 +15,49 @@
 #include "ConfigValues.h"
 #include "DataFileReader.h"
 
-#include "DirectoryImport.h"
+#include "Importer.h"
 
 using namespace std;
 
 ConfigValues getConfigFileSettings();
 
-
 int main(int argc, const char **argv)
 {    
-
     ConfigValues configFile = getConfigFileSettings();
-    DirectoryImport importDirectories = DirectoryImport(configFile);
+    Importer importer = Importer(configFile);
+    importer.startImport();
 }
 
 ConfigValues getConfigFileSettings(){
-    // key values in config file
-    string configDBName = CONFIG_DB_NAME;
-    string configDBHostname = CONFIG_DB_HOSTNAME;
-    string configDBUsername = CONFIG_DB_USERNAME;
-    string configDBPassword = CONFIG_DB_PASSWORD;
     
     ConfigValues configFile;
     configFile.isValid = true;
     
     ConfigFileReader cfg = ConfigFileReader(CONFIG_FILE_NAME);
     
-	if(cfg.keyExists(configDBName)){
-        configFile.dbNameValue = cfg.getValueOfKey(configDBName);
+	if(cfg.keyExists(CONFIG_DB_NAME)){
+        configFile.dbNameValue = cfg.getValueOfKey(CONFIG_DB_NAME);
     }
-    if(cfg.keyExists(configDBHostname)){
-        configFile.dbHostnameValue = cfg.getValueOfKey(configDBHostname);
+    if(cfg.keyExists(CONFIG_DB_HOSTNAME)){
+        configFile.dbHostnameValue = cfg.getValueOfKey(CONFIG_DB_HOSTNAME);
     }
-    if(cfg.keyExists(configDBUsername)){
-        configFile.dbUsernameValue = cfg.getValueOfKey(configDBUsername);
+    if(cfg.keyExists(CONFIG_DB_USERNAME)){
+        configFile.dbUsernameValue = cfg.getValueOfKey(CONFIG_DB_USERNAME);
     }
-    if(cfg.keyExists(configDBPassword)){
-        configFile.dbPasswordValue = cfg.getValueOfKey(configDBPassword);
+    if(cfg.keyExists(CONFIG_DB_PASSWORD)){
+        configFile.dbPasswordValue = cfg.getValueOfKey(CONFIG_DB_PASSWORD);
+    }
+    if(cfg.keyExists(TOP_LEVEL_DIRECOTRY)){
+        configFile.topLevelDirectory = cfg.getValueOfKey(TOP_LEVEL_DIRECOTRY);
     }
     if(configFile.dbNameValue.empty() || 
        configFile.dbHostnameValue.empty() || 
        configFile.dbUsernameValue.empty() || 
-       configFile.dbPasswordValue.empty()){
+       configFile.dbPasswordValue.empty() ||
+       configFile.topLevelDirectory.empty()){
         cout << "Invalid .config file";
         configFile.isValid = false;
+        exit(1);
     }
     return configFile;
 }

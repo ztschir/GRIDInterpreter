@@ -21,12 +21,11 @@ using namespace std;
 class DataFileReader
 {
 public:
-    DataFileReader(string fileName, char seperatorValueIn, TableColumns& tableColumnsIn);
+    DataFileReader(int receiverID, string fileName, TableColumns& tableColumnsIn);
     int importFile();
 private:
     FILE *file;
     TableColumns tableColumns;
-    char seperatorValue;
 };
 
 

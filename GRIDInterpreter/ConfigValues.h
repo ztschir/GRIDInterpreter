@@ -14,6 +14,7 @@ using namespace std;
 class ConfigValues{
 public:
     bool isValid;
+    string topLevelDirectory;
     string dbNameValue;
     string dbHostnameValue;
     string dbUsernameValue;

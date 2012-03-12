@@ -24,18 +24,18 @@ class TableColumns{
 public:
     TableColumns();
     TableColumns(string tableNameIn, ConfigValues& configValuesIn);
-    void addTableColumnInt(string columnName);
-    void addTableColumnFloat(string columnName);
-    void addTableColumnDouble(string columnName);
-    void addTableColumnString(string columnName);
+    void addTableColumnInt(string columnName, bool isFileReadInValueIn = true, int defaultValueIn = 0);
+    void addTableColumnFloat(string columnName, bool isFileReadInValueIn = true, float defaultValueIn = 0);
+    void addTableColumnDouble(string columnName, bool isFileReadInValueIn = true, double defaultValueIn = 0);
+    void addTableColumnString(string columnName, bool isFileReadInValueIn = true, string defaultValueIn = "");
     
     void writeValuesToDB();
     TableColumnValues getColumnValues(string columnName);
     TableColumnValues getColumnValues(int index);
+    bool areAnyColumnsEmpty();
     int getNumberOfColumns();
     
 private:
-    map<string, TableColumnValues> columns;
     vector<TableColumnValues> columnIndex;
     string tableName;
     ConfigValues configValues;

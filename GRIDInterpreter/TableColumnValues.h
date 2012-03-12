@@ -20,12 +20,12 @@ using namespace std;
 
 class TableColumnValues{
 public:
-    TableColumnValues(string columnName, char valueTypeIn);
+    TableColumnValues(string columnNameIn, char valueTypeIn, bool isFileReadInValueIn);
     
-    TableColumnValues(list<int>* value);
-    TableColumnValues(list<float>* value);
-    TableColumnValues(list<double>* value);
-    TableColumnValues(list<string>* value);
+    TableColumnValues(list<int>* value, bool isFileReadInValueIn);
+    TableColumnValues(list<float>* value, bool isFileReadInValueIn);
+    TableColumnValues(list<double>* value, bool isFileReadInValueIn);
+    TableColumnValues(list<string>* value, bool isFileReadInValueIn);
     
     void setValues(list<int>* value);
     void setValues(list<float>* value);
@@ -42,19 +42,28 @@ public:
     void addValue(double& value);
     void addValue(string& value);
     
+
+    
+    list<int> *getIntValues();
+    list<float> *getFloatValues();
+    list<double> *getDoubleValues();
+    list<string> *getStringValues();
+    
+    int popTopIntValue();
+    float popTopFloatValue();
+    double popTopDoubleValue();
+    string popTopStringValue();
+    
     bool isEmpty();
     string getColumnName();
     char getValueType();
     int getRowCount();
-    
-    list<int>* getIntValues();
-    list<float>* getFloatValues();
-    list<double>* getDoubleValues();
-    list<string>* getStringValues();
+    bool isReadInValue();
     
 private:
     char valueType;
     string columnName;
+    bool isFileReadInValue;
     
     list<int> *intValues;
     list<float> *floatValues;
