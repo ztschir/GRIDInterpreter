@@ -60,18 +60,18 @@ bool TableColumns::areAnyColumnsEmpty(){
 
 void TableColumns::writeValuesToDB(){
     
-    //sql::Driver *driver;
+    sql::Driver *driver;
 	stringstream sql;
     stringstream msg;
     
 	try {
 		// Create a connection
-		//driver = get_driver_instance();
-		//auto_ptr<sql::Connection> con(driver->connect(configValues.dbHostnameValue, configValues.dbUsernameValue, configValues.dbPasswordValue));
+		driver = get_driver_instance();
+		auto_ptr<sql::Connection> con(driver->connect(configValues.dbHostnameValue, configValues.dbUsernameValue, configValues.dbPasswordValue));
         
 		
-		//auto_ptr<sql::Statement> stmt(con->createStatement());
-		//stmt->execute("USE " + configValues.dbNameValue);
+		auto_ptr<sql::Statement> stmt(con->createStatement());
+		stmt->execute("USE " + configValues.dbNameValue);
         
         long num_columns = getNumberOfColumns();
         
@@ -98,37 +98,36 @@ void TableColumns::writeValuesToDB(){
         statement.append(")");
         
         // Create a prepared statement and add all values from the tableColumnValues object
-        //auto_ptr< sql::PreparedStatement > prep_stmt(con->prepareStatement(statement));
+        auto_ptr< sql::PreparedStatement > prep_stmt(con->prepareStatement(statement));
         while(!areAnyColumnsEmpty()){
             for(int j = 0; j < num_columns; j++){
                 switch (columnIndex[j].getValueType()) {
                     case INT_VALUE:
-                        //prep_stmt->setInt(j + 1, columnIndex[j].popTopIntValue());
-                        cout << columnIndex[j].popTopIntValue() << "   ";
+                        prep_stmt->setInt(j + 1, columnIndex[j].popTopIntValue());
+                        //cout << columnIndex[j].popTopIntValue() << "   ";
                         break;
                     case DOUBLE_VALUE:
-                        //prep_stmt->setDouble(j + 1, columnIndex[j].popTopDoubleValue());
-                        cout << columnIndex[j].popTopDoubleValue() << "   ";
+                        prep_stmt->setDouble(j + 1, columnIndex[j].popTopDoubleValue());
+                        //cout << columnIndex[j].popTopDoubleValue() << "   ";
                         break;
                     case FLOAT_VALUE:
-                        //prep_stmt->setDouble(j + 1, columnIndex[j].popTopFloatValue());
-                        cout << columnIndex[j].popTopFloatValue() << "   ";
+                        prep_stmt->setDouble(j + 1, columnIndex[j].popTopFloatValue());
+                        //cout << columnIndex[j].popTopFloatValue() << "   ";
                         break;
                     case STRING_VALUE:
-                        //prep_stmt->setString(j + 1, columnIndex[j].popTopStringValue());
-                        cout << columnIndex[j].popTopStringValue() << "   ";
+                        prep_stmt->setString(j + 1, columnIndex[j].popTopStringValue());
+                        //cout << columnIndex[j].popTopStringValue() << "   ";
                         break;
                     default:
                         break;
                 }
             }
-            //prep_stmt->executeUpdate();
-            cout << endl;
+            prep_stmt->executeUpdate();
         }
-        //prep_stmt->execute();
+        prep_stmt->execute();
         
         // Close the connection
-        //con->close();
+        con->close();
         
     } catch (sql::SQLException &e) {
     /*

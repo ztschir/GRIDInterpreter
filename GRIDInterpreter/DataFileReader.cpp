@@ -90,7 +90,7 @@ int DataFileReader::importFile(){
             }
             row++;
         }
-        fclose (file);
+        fclose(file);
     }
     return numberErrorRows;
 }

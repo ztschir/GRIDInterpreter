@@ -17,71 +17,57 @@ TableColumnValues::TableColumnValues(string columnNameIn, char valueTypeIn, bool
     
     switch (valueType){
         case INT_VALUE:{
-            intValues = new list<int>();
+            intValues = new vector<int>();
         }
         case DOUBLE_VALUE:{
-            doubleValues = new list<double>();
+            doubleValues = new vector<double>();
         }
         case FLOAT_VALUE:{
-            floatValues = new list<float>();
+            floatValues = new vector<float>();
         }
         case STRING_VALUE:{
-            stringValues = new list<string>();
+            stringValues = new vector<string>();
         }
     }
 }
 
-TableColumnValues::TableColumnValues(list<int>* value, bool isFileReadInValueIn) : intValues(value){
+TableColumnValues::TableColumnValues(vector<int>* value, bool isFileReadInValueIn) : intValues(value){
     isFileReadInValue = isFileReadInValueIn;
     intValues = value;
     valueType = INT_VALUE;
 }
-TableColumnValues::TableColumnValues(list<double>* value, bool isFileReadInValueIn) : doubleValues(value){
+TableColumnValues::TableColumnValues(vector<double>* value, bool isFileReadInValueIn) : doubleValues(value){
     isFileReadInValue = isFileReadInValueIn;
     doubleValues = value;
     valueType = DOUBLE_VALUE;
 }
-TableColumnValues::TableColumnValues(list<float>* value, bool isFileReadInValueIn) : floatValues(value){
+TableColumnValues::TableColumnValues(vector<float>* value, bool isFileReadInValueIn) : floatValues(value){
     isFileReadInValue = isFileReadInValueIn;
     floatValues = value;
     valueType = FLOAT_VALUE;
 }
-TableColumnValues::TableColumnValues(list<string>* value, bool isFileReadInValueIn) : stringValues(value){
+TableColumnValues::TableColumnValues(vector<string>* value, bool isFileReadInValueIn) : stringValues(value){
     isFileReadInValue = isFileReadInValueIn;
     stringValues = value;
     valueType = STRING_VALUE;
 }
 
                                      
-void TableColumnValues::setValues(list<int>* value){
+void TableColumnValues::setValues(vector<int>* value){
     intValues = value;
     valueType = INT_VALUE;
 }
-void TableColumnValues::setValues(list<float>* value){
+void TableColumnValues::setValues(vector<float>* value){
     floatValues = value;
     valueType = FLOAT_VALUE;
 }
-void TableColumnValues::setValues(list<double>* value){
+void TableColumnValues::setValues(vector<double>* value){
     doubleValues = value;
     valueType = DOUBLE_VALUE;
 }
-void TableColumnValues::setValues(list<string>* value){
+void TableColumnValues::setValues(vector<string>* value){
     stringValues = value;
     valueType = STRING_VALUE;
-}
-
-
-void TableColumnValues::appendValues(list<int>& values){
-    intValues->merge(values);
-}
-void TableColumnValues::appendValues(list<float>& values){
-    floatValues->merge(values);
-}
-void TableColumnValues::appendValues(list<double>& values){
-    doubleValues->merge(values);
-}
-void TableColumnValues::appendValues(list<string>& values){
-    stringValues->merge(values);
 }
 
 
@@ -153,40 +139,40 @@ bool TableColumnValues::isReadInValue(){
     return isFileReadInValue;
 }
 
-list<int>* TableColumnValues::getIntValues(){
+vector<int>* TableColumnValues::getIntValues(){
     return intValues;
 }
-list<float>* TableColumnValues::getFloatValues(){
+vector<float>* TableColumnValues::getFloatValues(){
     return floatValues;
 }
-list<double>* TableColumnValues::getDoubleValues(){
+vector<double>* TableColumnValues::getDoubleValues(){
     return doubleValues;
 }
-list<string>* TableColumnValues::getStringValues(){
+vector<string>* TableColumnValues::getStringValues(){
     return stringValues;
 }
 
 int TableColumnValues::popTopIntValue(){
-    int value = intValues->front();
+    int value = intValues->back();
     if(isFileReadInValue)
-        intValues->pop_front();
+        intValues->pop_back();
     return value;
 }
 float TableColumnValues::popTopFloatValue(){
-    float value = floatValues->front();
+    float value = floatValues->back();
     if(isFileReadInValue)
-        floatValues->pop_front();
+        floatValues->pop_back();
     return value;
 }
 double TableColumnValues::popTopDoubleValue(){
-    float value = doubleValues->front();
+    float value = doubleValues->back();
     if(isFileReadInValue)
-        doubleValues->pop_front();
+        doubleValues->pop_back();
     return value;
 }
 string TableColumnValues::popTopStringValue(){
-    string value = stringValues->front();
+    string value = stringValues->back();
     if(isFileReadInValue)
-        stringValues->pop_front();
+        stringValues->pop_back();
     return value;
 }

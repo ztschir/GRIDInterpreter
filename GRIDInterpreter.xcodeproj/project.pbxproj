@@ -35,7 +35,7 @@
 
 /* Begin PBXFileReference section */
 		E0140AA61505940C00DF2874 /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
-		E0140AAD1505CBD500DF2874 /* Importer.h */ = {isa = PBXFileReference; fileEncoding = 4; path = Importer.h; sourceTree = "<group>"; };
+		E0140AAD1505CBD500DF2874 /* Importer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Importer.h; sourceTree = "<group>"; };
 		E0140AAE1505CBE300DF2874 /* Importer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Importer.cpp; sourceTree = "<group>"; };
 		E01980F114F1784800E22D64 /* GRIDInterpreter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GRIDInterpreter.cpp; sourceTree = "<group>"; };
 		E046983914E99CB700C04B45 /* TableColumnValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableColumnValues.h; sourceTree = "<group>"; };
@@ -191,7 +191,7 @@
 		E060D55014E0E81A0040F31D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = "Radio Navigation Lab";
 			};
 			buildConfigurationList = E060D55314E0E81A0040F31D /* Build configuration list for PBXProject "GRIDInterpreter" */;

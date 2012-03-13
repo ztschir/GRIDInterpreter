@@ -50,11 +50,11 @@ const char STRING_VALUE = 4;
 #define LENGTH_OF_GRIDRX_ID 3
 #define PREFIX_FOR_DIRECTORIES "GRID"
 
-#define CHANNEL_COLUMN_NAME "channel"
-#define IONOSHPHERE_COLUMN_NAME "iono"
-#define NAVIGATION_SOLUTION_COLUMN_NAME "navigationSolution"
-#define SCINTILLATION_COLUMN_NAME "scintillation"
-#define TRANSMITTER_INFO_COLUMN_NAME "transmitterInfo"
+#define CHANNEL_COLUMN_NAME "channelImport"
+#define IONOSHPHERE_COLUMN_NAME "ionosphereImport"
+#define NAVIGATION_SOLUTION_COLUMN_NAME "navigationSolutionImport"
+#define SCINTILLATION_COLUMN_NAME "scintillationImport"
+#define TRANSMITTER_INFO_COLUMN_NAME "transmitterInfoImport"
 
 #define CHANNEL_FILENAME "channel.log"
 #define IONOSHPHERE_FILENAME "iono.log"
