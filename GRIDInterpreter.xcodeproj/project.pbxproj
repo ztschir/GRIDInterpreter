@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E0140AA71505940C00DF2874 /* makefile in Sources */ = {isa = PBXBuildFile; fileRef = E0140AA61505940C00DF2874 /* makefile */; };
+		E0140AA71505940C00DF2874 /* CMakeLists.txt in Sources */ = {isa = PBXBuildFile; fileRef = E0140AA61505940C00DF2874 /* CMakeLists.txt */; };
 		E0140AAF1505CBE300DF2874 /* Importer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0140AAE1505CBE300DF2874 /* Importer.cpp */; };
 		E01980F214F1784800E22D64 /* GRIDInterpreter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E01980F114F1784800E22D64 /* GRIDInterpreter.cpp */; };
 		E046983B14E99E2000C04B45 /* TableColumnValues.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E046983A14E99E2000C04B45 /* TableColumnValues.cpp */; };
@@ -34,7 +34,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E0140AA61505940C00DF2874 /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
+		E0140AA61505940C00DF2874 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
 		E0140AAD1505CBD500DF2874 /* Importer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Importer.h; sourceTree = "<group>"; };
 		E0140AAE1505CBE300DF2874 /* Importer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Importer.cpp; sourceTree = "<group>"; };
 		E01980F114F1784800E22D64 /* GRIDInterpreter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GRIDInterpreter.cpp; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 		E060D55C14E0E81A0040F31D /* GRIDInterpreter */ = {
 			isa = PBXGroup;
 			children = (
-				E0140AA61505940C00DF2874 /* makefile */,
+				E0140AA61505940C00DF2874 /* CMakeLists.txt */,
 				E060D55F14E0E81A0040F31D /* GRIDInterpreter.1 */,
 				E01980F114F1784800E22D64 /* GRIDInterpreter.cpp */,
 				E046983914E99CB700C04B45 /* TableColumnValues.h */,
@@ -221,7 +221,7 @@
 				E0F1B57314EC200D009B5421 /* ConfigFileReader.cpp in Sources */,
 				E01980F214F1784800E22D64 /* GRIDInterpreter.cpp in Sources */,
 				E0B6A02E14FD83B0003D435D /* DataFileReader.cpp in Sources */,
-				E0140AA71505940C00DF2874 /* makefile in Sources */,
+				E0140AA71505940C00DF2874 /* CMakeLists.txt in Sources */,
 				E0140AAF1505CBE300DF2874 /* Importer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
