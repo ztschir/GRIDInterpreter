@@ -18,7 +18,9 @@ void Importer::startImport(){
     vector<string> directoriesInTopDirectory;
     getdir(configFile.topLevelDirectory, directoriesInTopDirectory);
     
-    for(string directoryName: directoriesInTopDirectory){
+
+    for(int i = 0; i < directoriesInTopDirectory.size(); i++){
+        string directoryName = directoriesInTopDirectory[i];
         // Extract the Receiver ID
         string receiverIDstr = directoryName.substr(directoryName.find(PREFIX_FOR_DIRECTORIES) + string(PREFIX_FOR_DIRECTORIES).size(), LENGTH_OF_GRIDRX_ID); 
         int receiverID;
