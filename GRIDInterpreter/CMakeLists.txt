@@ -41,13 +41,17 @@ if(MYSQLCONNECTORCPP_FOUND)
         mark_as_advanced(MYSQLCONNECTORCPP_ROOT_DIR) 
 endif() 
 
+include_directories(./lib/cppconn ./lib)
 include_directories(${GRIDInterpreter_SOURCE_DIR})
 link_directories(${GRIDInterpreter_BINARY_DIR})
 
-#these are all compiled the same way
-set(PROGRAMS GRIDInterpreter TableColumnValues TableColumns ConfigFileReader DataFileReader Importer)
+file(GLOB GRIDInterpreter_SOURCE_DIR
+    "*.h"
+    "*.cpp"
+)
 
-foreach(program ${PROGRAMS})
-  add_executable(${program} ${program}.cpp)
-  target_link_libraries(${program} ${CORELIBS})
-endforeach(program)
+add_executable(GRIDInterpreter ${GRIDInterpreter_SOURCE_DIR})
+
+
+
+
