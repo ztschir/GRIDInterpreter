@@ -152,6 +152,8 @@ vector<string>* TableColumnValues::getStringValues(){
     return stringValues;
 }
 
+
+// TODO:change pop names to something else 
 int TableColumnValues::popTopIntValue(){
     int value = intValues->back();
     if(isFileReadInValue)

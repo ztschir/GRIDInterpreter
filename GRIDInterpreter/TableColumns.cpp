@@ -50,7 +50,8 @@ int TableColumns::getNumberOfColumns(){
 }
 
 bool TableColumns::areAnyColumnsEmpty(){
-    for(int i = 0; i < columnIndex.size(); i++){
+    int size = columnIndex.size();
+    for(int i = 0; i < size; i++){
         TableColumnValues column = columnIndex[i];    
         if(column.isEmpty()){
             return true;
@@ -61,7 +62,7 @@ bool TableColumns::areAnyColumnsEmpty(){
 
 void TableColumns::writeValuesToDB(){
     
-    sql::Driver *driver;
+    sql::mysql::MySQL_Driver *driver;
 	stringstream sql;
     stringstream msg;
     
