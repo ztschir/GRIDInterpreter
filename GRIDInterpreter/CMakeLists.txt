@@ -16,6 +16,7 @@ set(MYSQLCONNECTORCPP_ROOT_DIR
 
 find_path(MYSQLCONNECTORCPP_INCLUDE_DIR 
         mysql_connection.h 
+        mysql_driver.h
         HINTS 
         ${MYSQLCONNECTORCPP_ROOT_DIR} 
         PATH_SUFFIXES 
@@ -53,6 +54,8 @@ file(GLOB GRIDInterpreter_SOURCE_DIR
 file(GLOB GRIDInterpreter_LIB_HEADERS
     "${PROJECT_SOURCE_DIR}/lib/*.h"
 )
+
+target_link_libraries(GRIDInterpreter "${PROJECT_SOURCE_DIR}/lib/libmysqlcppconn.so")
 
 add_executable(GRIDInterpreter ${GRIDInterpreter_SOURCE_DIR})
 
