@@ -3,8 +3,13 @@ project(GRIDInterpreter)
 
 set(CMAKE_CXX_FLAGS "-g -Wall")
 
+
+include_directories(./ ./lib/cppconn ./lib)
+link_directories(./)
+
+
 set(MYSQLCONNECTORCPP_ROOT_DIR 
-        "${MYSQLCONNECTORCPP_ROOT_DIR}" 
+        ./lib/ 
         CACHE 
         PATH 
         "Where to start looking for this component.") 
@@ -13,7 +18,7 @@ set(MYSQLCONNECTORCPP_ROOT_DIR
 find_path(MYSQLCONNECTORCPP_INCLUDE_DIR 
         mysql_connection.h 
         HINTS 
-        ${MYSQLCONNECTORCPP_ROOT_DIR} 
+        ./lib/
         PATH_SUFFIXES 
         include) 
                 
@@ -22,7 +27,7 @@ find_library(MYSQLCONNECTORCPP_LIBRARY
         mysqlcppconn 
         mysqlcppconn-static 
         HINTS 
-        ${MYSQLCONNECTORCPP_ROOT_DIR} 
+        ./lib/
         PATH_SUFFIXES 
         lib64 
         lib)  
@@ -41,16 +46,20 @@ if(MYSQLCONNECTORCPP_FOUND)
         mark_as_advanced(MYSQLCONNECTORCPP_ROOT_DIR) 
 endif() 
 
-include_directories(./lib/cppconn ./lib)
-include_directories(${GRIDInterpreter_SOURCE_DIR})
-link_directories(${GRIDInterpreter_BINARY_DIR})
-
-file(GLOB GRIDInterpreter_SOURCE_DIR
+file(GLOB ./
     "*.h"
     "*.cpp"
 )
 
-add_executable(GRIDInterpreter ${GRIDInterpreter_SOURCE_DIR})
+file(GLOB ./lib/
+    "*.h"
+)
+
+file(GLOB ./lib/cppconn/
+    "*.h"
+)
+
+add_executable(GRIDInterpreter ./)
 
 
 
