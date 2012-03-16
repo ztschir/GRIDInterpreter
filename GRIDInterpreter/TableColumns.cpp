@@ -67,7 +67,7 @@ void TableColumns::writeValuesToDB(){
     
 	try {
 		// Create a connection
-		driver = get_driver_instance();
+		driver = sql::mysql::get_mysql_driver_instance();
 		auto_ptr<sql::Connection> con(driver->connect(configValues.dbHostnameValue, configValues.dbUsernameValue, configValues.dbPasswordValue));
         
 		
@@ -105,19 +105,15 @@ void TableColumns::writeValuesToDB(){
                 switch (columnIndex[j].getValueType()) {
                     case INT_VALUE:
                         prep_stmt->setInt(j + 1, columnIndex[j].popTopIntValue());
-                        //cout << columnIndex[j].popTopIntValue() << "   ";
                         break;
                     case DOUBLE_VALUE:
                         prep_stmt->setDouble(j + 1, columnIndex[j].popTopDoubleValue());
-                        //cout << columnIndex[j].popTopDoubleValue() << "   ";
                         break;
                     case FLOAT_VALUE:
                         prep_stmt->setDouble(j + 1, columnIndex[j].popTopFloatValue());
-                        //cout << columnIndex[j].popTopFloatValue() << "   ";
                         break;
                     case STRING_VALUE:
                         prep_stmt->setString(j + 1, columnIndex[j].popTopStringValue());
-                        //cout << columnIndex[j].popTopStringValue() << "   ";
                         break;
                     default:
                         break;

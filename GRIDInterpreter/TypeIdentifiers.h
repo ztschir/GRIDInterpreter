@@ -20,6 +20,7 @@
 #include <cppconn/resultset.h>
 #include <cppconn/resultset_metadata.h>
 #include <cppconn/statement.h>
+#include "mysql_driver.h"
 
 #include <sys/types.h>
 #include <dirent.h>
