@@ -4,12 +4,11 @@ project(GRIDInterpreter)
 set(CMAKE_CXX_FLAGS "-g -Wall")
 
 
-include_directories(./ ./lib/cppconn ./lib)
-link_directories(./)
-link_directories("${PROJECT_SOURCE_DIR}/lib")
+include_directories("${PROJECT_SOURCE_DIR}" "${PROJECT_SOURCE_DIR}/lib" "${PROJECT_SOURCE_DIR}/lib/cppconn")
+link_directories("${PROJECT_SOURCE_DIR}" "${PROJECT_SOURCE_DIR}/lib" "${PROJECT_SOURCE_DIR}/lib/cppconn")
 
 set(MYSQLCONNECTORCPP_ROOT_DIR 
-        "./lib/" 
+        "${PROJECT_SOURCE_DIR}/lib" 
         CACHE 
         PATH 
         "Where to start looking for this component.") 
@@ -41,8 +40,8 @@ find_package_handle_standard_args(MysqlConnectorCpp
         MYSQLCONNECTORCPP_LIBRARY) 
 
 if(MYSQLCONNECTORCPP_FOUND) 
-        set(MYSQLCONNECTORCPP_INCLUDE_DIRS "./lib") # Add any dependencies here 
-        set(MYSQLCONNECTORCPP_LIBRARIES "./lib") # Add any dependencies here 
+        set(MYSQLCONNECTORCPP_INCLUDE_DIRS "${PROJECT_SOURCE_DIR}/lib") # Add any dependencies here 
+        set(MYSQLCONNECTORCPP_LIBRARIES "${PROJECT_SOURCE_DIR}/lib") # Add any dependencies here 
         mark_as_advanced(MYSQLCONNECTORCPP_ROOT_DIR) 
 endif() 
 
@@ -52,7 +51,7 @@ file(GLOB GRIDInterpreter_SOURCE_DIR
 )
 
 file(GLOB GRIDInterpreter_LIB_HEADERS
-    "lib/*.h"
+    "${PROJECT_SOURCE_DIR}/lib/*.h"
 )
 
 add_executable(GRIDInterpreter ${GRIDInterpreter_SOURCE_DIR})
