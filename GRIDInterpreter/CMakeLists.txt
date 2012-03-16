@@ -6,7 +6,7 @@ set(CMAKE_CXX_FLAGS "-g -Wall")
 
 include_directories(./ ./lib/cppconn ./lib)
 link_directories(./)
-
+link_directories("${PROJECT_SOURCE_DIR}/lib")
 
 set(MYSQLCONNECTORCPP_ROOT_DIR 
         "./lib/" 
@@ -54,7 +54,7 @@ file(GLOB GRIDInterpreter_SOURCE_DIR
 file(GLOB GRIDInterpreter_LIB_HEADERS
     "lib/*.h"
 )
-add_library(MYSQLCONNECTORCPP_LIBRARY)
+
 add_executable(GRIDInterpreter ${GRIDInterpreter_SOURCE_DIR})
 
 
