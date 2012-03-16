@@ -54,7 +54,7 @@ file(GLOB GRIDInterpreter_SOURCE_DIR
 file(GLOB GRIDInterpreter_LIB_HEADERS
     "lib/*.h"
 )
-add_libraries(MYSQLCONNECTORCPP_LIBRARY)
+add_library(MYSQLCONNECTORCPP_LIBRARY)
 add_executable(GRIDInterpreter ${GRIDInterpreter_SOURCE_DIR})
 
 
