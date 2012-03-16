@@ -9,7 +9,7 @@ link_directories(./)
 
 
 set(MYSQLCONNECTORCPP_ROOT_DIR 
-        ./lib/ 
+        "./lib/" 
         CACHE 
         PATH 
         "Where to start looking for this component.") 
@@ -18,7 +18,7 @@ set(MYSQLCONNECTORCPP_ROOT_DIR
 find_path(MYSQLCONNECTORCPP_INCLUDE_DIR 
         mysql_connection.h 
         HINTS 
-        ./lib/
+        ${MYSQLCONNECTORCPP_ROOT_DIR} 
         PATH_SUFFIXES 
         include) 
                 
@@ -27,7 +27,7 @@ find_library(MYSQLCONNECTORCPP_LIBRARY
         mysqlcppconn 
         mysqlcppconn-static 
         HINTS 
-        ./lib/
+        ${MYSQLCONNECTORCPP_ROOT_DIR} 
         PATH_SUFFIXES 
         lib64 
         lib)  
@@ -41,25 +41,21 @@ find_package_handle_standard_args(MysqlConnectorCpp
         MYSQLCONNECTORCPP_LIBRARY) 
 
 if(MYSQLCONNECTORCPP_FOUND) 
-        set(MYSQLCONNECTORCPP_INCLUDE_DIRS "${MYSQLCONNECTORCPP_INCLUDE_DIR}") # Add any dependencies here 
-        set(MYSQLCONNECTORCPP_LIBRARIES "${MYSQLCONNECTORCPP_LIBRARY}") # Add any dependencies here 
+        set(MYSQLCONNECTORCPP_INCLUDE_DIRS "./lib") # Add any dependencies here 
+        set(MYSQLCONNECTORCPP_LIBRARIES "./lib") # Add any dependencies here 
         mark_as_advanced(MYSQLCONNECTORCPP_ROOT_DIR) 
 endif() 
 
-file(GLOB ./
+file(GLOB GRIDInterpreter_SOURCE_DIR
     "*.h"
     "*.cpp"
 )
 
-file(GLOB ./lib/
-    "*.h"
+file(GLOB GRIDInterpreter_LIB_HEADERS
+    "lib/*.h"
 )
-
-file(GLOB ./lib/cppconn/
-    "*.h"
-)
-
-add_executable(GRIDInterpreter ./)
+add_libraries(MYSQLCONNECTORCPP_LIBRARY)
+add_executable(GRIDInterpreter ${GRIDInterpreter_SOURCE_DIR})
 
 
 
