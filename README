@@ -1,0 +1,56 @@
+
+
+
+GRIDInterpreter is a program to import GRID Receiver log files into a database.
+
+
+REQUIREMENTS
+
+Linux/Unix -            Almost any version of linux/unix is needed, specificly for one line of code, 
+                            I may change this if needed in the future
+MySQL server >= v5.1 -  Either MySQL server running locally, or the IP address of a server running remotely.
+libstdc++5 -            Needed to compile the source code.
+CMake v2.6 or higher -  Needed to create the makeFile in order to compile the source code.
+
+Directories named GRIDXXX-log and one set of .log files (channel.log, iono.log, etc.) in each directory. 
+It should look something like this:
+
+~/receivedFiles/GRID019-log/
+    -channel.log
+    -iono.log
+    -navsol.log
+    -scint.log
+    -txinfo.log
+~/receivedFiles/GRID020-log/
+    -channel.log
+    -navsol.log
+...
+
+
+
+COMPILE INSTRUCTIONS
+
+1. run 'cmake -i' for interactive mode
+2. run 'make'
+
+
+
+RUN INSTRUCTIONS
+
+1. if gridinterpreter.config is not found, create a new one with needed parameters:
+    db_name=NAME_OF_DATABASE;
+    db_hostname=HOSTNAME_OF_DATABASE;
+    db_username=DATABASE_USERNAME;
+    db_password=DATABASE_PASSWORD;
+    top_level_directory=FULL_PATH_TO_DIRECTORY_WHERE_GRID_RECEIVER_EXPANDED_LOGFILES_ARE_STORED;
+    delete_log_file_after_import=1_OR_0_TO_DELETE_LOG_FILES_AFTER_FINISHED_IMPORTING;
+2. run 'GRIDInterpreter' to import all .log files into the specified MySQL server.
+
+
+
+TODO
+
+- Fix the problem of not deleting the directory after importing the .log files
+- Automatically create the .config file if it's not found after running.
+- Add the ability to configure the .log file structure in the config file, so instead of recompiling 
+    the source when the .log files change, you can just modify the structure in the .config file.
