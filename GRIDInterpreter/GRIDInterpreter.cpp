@@ -14,7 +14,6 @@
 #include "ConfigFileReader.h"
 #include "ConfigValues.h"
 #include "DataFileReader.h"
-
 #include "Importer.h"
 
 using namespace std;
