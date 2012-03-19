@@ -42,6 +42,7 @@ const char FLOAT_VALUE = 2;
 const char DOUBLE_VALUE = 3;
 const char STRING_VALUE = 4;
 
+//Config file definitions
 #define CONFIG_FILE_NAME "gridinterpreter.config"
 #define CONFIG_DB_NAME "db_name"
 #define CONFIG_DB_HOSTNAME "db_hostname"
@@ -50,6 +51,7 @@ const char STRING_VALUE = 4;
 #define TOP_LEVEL_DIRECOTRY "top_level_directory"
 #define DELETE_LOG_FILES_AFTER_IMPORT "delete_log_file_after_import"
 
+// TODO: Find the length a different way, possibly have Prefix stated in the config file.
 #define LENGTH_OF_GRIDRX_ID 3
 #define PREFIX_FOR_DIRECTORIES "GRID"
 

@@ -167,7 +167,7 @@ float TableColumnValues::popTopFloatValue(){
     return value;
 }
 double TableColumnValues::popTopDoubleValue(){
-    float value = doubleValues->back();
+    double value = doubleValues->back();
     if(isFileReadInValue)
         doubleValues->pop_back();
     return value;

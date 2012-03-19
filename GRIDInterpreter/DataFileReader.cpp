@@ -80,9 +80,10 @@ int DataFileReader::importFile(){
                         }
                             
                         default:{
-                            string str;
+                            char str;
                             fscanf(file, " %s ", &str);
-                            column.addValue(str);
+                            string strval = string(&str);
+                            column.addValue(strval);
                             break;
                         }
                     }

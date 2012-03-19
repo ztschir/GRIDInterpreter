@@ -50,7 +50,7 @@ int TableColumns::getNumberOfColumns(){
 }
 
 bool TableColumns::areAnyColumnsEmpty(){
-    int size = columnIndex.size();
+    long size = columnIndex.size();
     for(int i = 0; i < size; i++){
         TableColumnValues column = columnIndex[i];    
         if(column.isEmpty()){
