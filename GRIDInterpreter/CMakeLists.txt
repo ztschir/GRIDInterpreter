@@ -12,6 +12,8 @@ file(GLOB GRIDInterpreter_SOURCE_DIR
 )
 
 add_executable(GRIDInterpreter ${GRIDInterpreter_SOURCE_DIR})
-target_link_libraries(GRIDInterpreter "${PROJECT_SOURCE_DIR}/lib/libmysqlcppconn.so")
+target_link_libraries(GRIDInterpreter 
+"${PROJECT_SOURCE_DIR}/lib/libmysqlcppconn.so"
+)
 
 

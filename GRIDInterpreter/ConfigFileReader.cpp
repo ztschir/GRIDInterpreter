@@ -31,8 +31,7 @@ void Convert::exitWithError(const string &error) {
 	cout << error;
 	cin.ignore();
 	cin.get();
-    
-	exit(EXIT_FAILURE);
+	
 }
 
 

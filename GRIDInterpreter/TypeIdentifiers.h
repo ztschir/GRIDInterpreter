@@ -34,6 +34,8 @@
 #include <map>
 #include <vector>
 #include <sstream>
+#include <typeinfo>
+#include <cstdlib>
 
 const char INT_VALUE = 1;
 const char FLOAT_VALUE = 2;
