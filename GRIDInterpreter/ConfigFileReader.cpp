@@ -89,10 +89,8 @@ void ConfigFileReader::parseLine(const string &line, size_t const lineNo)
 {
     if (line.find('=') == line.npos)
         Convert::exitWithError("CFG: Couldn't find separator on line: " + Convert::T_to_string(lineNo) + "\n");
-    
     if (!validLine(line))
         Convert::exitWithError("CFG: Bad format for line: " + Convert::T_to_string(lineNo) + "\n");
-    
     extractContents(line);
 }
 

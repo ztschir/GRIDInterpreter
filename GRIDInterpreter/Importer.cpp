@@ -31,7 +31,7 @@ void Importer::startImport(){
         cout << "Importing directory: " << fullDirectoryPath << endl;
         
         if (!(convert >> receiverID)){
-            cout << "Invalid receiver ID or naming convention. Skipping import." << endl;
+            cout << "Invalid receiver ID or naming convention for directory. Skipping import." << endl;
         }
         else{
             importChannelData(receiverID, fullDirectoryPath);
@@ -183,7 +183,7 @@ void Importer::importTXInfoData(int receiverID, string directoryPath){
     
     txInfo.addTableColumnDouble("azmiuth");
     txInfo.addTableColumnDouble("elevation");
-    txInfo.addTableColumnInt("healthStatus");
+    txInfo.addTableColumnInt("healthStatusID");
     txInfo.addTableColumnInt("transmitterSystemID");
     txInfo.addTableColumnInt("transmitterID");
     

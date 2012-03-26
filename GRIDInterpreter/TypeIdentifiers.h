@@ -51,15 +51,15 @@ const char STRING_VALUE = 4;
 #define TOP_LEVEL_DIRECOTRY "top_level_directory"
 #define DELETE_LOG_FILES_AFTER_IMPORT "delete_log_file_after_import"
 
-// TODO: Find the length a different way, possibly have Prefix stated in the config file.
+// TODO: Find the length a different way, possibly have prefix stated in the config file.
 #define LENGTH_OF_GRIDRX_ID 3
 #define PREFIX_FOR_DIRECTORIES "GRID"
 
-#define CHANNEL_COLUMN_NAME "channelImport"
-#define IONOSHPHERE_COLUMN_NAME "ionosphereImport"
-#define NAVIGATION_SOLUTION_COLUMN_NAME "navigationSolutionImport"
-#define SCINTILLATION_COLUMN_NAME "scintillationImport"
-#define TRANSMITTER_INFO_COLUMN_NAME "transmitterInfoImport"
+#define CHANNEL_COLUMN_NAME "Import_Channel"
+#define IONOSHPHERE_COLUMN_NAME "Import_Ionosphere"
+#define NAVIGATION_SOLUTION_COLUMN_NAME "Import_NavigationSolution"
+#define SCINTILLATION_COLUMN_NAME "Import_Scintillation"
+#define TRANSMITTER_INFO_COLUMN_NAME "Import_TransmitterInfo"
 
 #define CHANNEL_FILENAME "channel.log"
 #define IONOSHPHERE_FILENAME "iono.log"

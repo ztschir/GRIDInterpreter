@@ -12,8 +12,11 @@ file(GLOB GRIDInterpreter_SOURCE_DIR
 )
 
 add_executable(GRIDInterpreter ${GRIDInterpreter_SOURCE_DIR})
+
+INSTALL_TARGETS(/usr/lib64 RUNTIME_DIRECTORY ${PROJECT_SOURCE_DIR}/lib libmysqlcppconn.so)
+
 target_link_libraries(GRIDInterpreter 
-"${PROJECT_SOURCE_DIR}/lib/libmysqlcppconn.so"
+"/usr/lib64/libmysqlcppconn.so"
 "/usr/lib64/libstdc++.so.5"
 )
 
