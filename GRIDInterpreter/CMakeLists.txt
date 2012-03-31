@@ -13,7 +13,16 @@ file(GLOB GRIDInterpreter_SOURCE_DIR
 
 add_executable(GRIDInterpreter ${GRIDInterpreter_SOURCE_DIR})
 
-INSTALL_TARGETS(/usr/lib64 RUNTIME_DIRECTORY ${PROJECT_SOURCE_DIR}/lib libmysqlcppconn.so)
+find_library(MYSQL_LIBRARY libmysqlcppconn PATHS /usr/lib64 DOC "libmysqlcppconn library")
+if(NOT MYSQL_LIBRARY)
+    message(FATAL_ERROR "Library libmysqlcppconn required, but not found!")
+endif(NOT MYSQL_LIBRARY)
+
+find_library(STD_LIBRARY libstdc++.so.5 PATHS /usr/lib64 DOC "libstdc++.so.5 library")
+if(NOT STD_LIBRARY)
+    message(FATAL_ERROR "Library libstdc++.so.5 required, but not found!")
+endif(NOT STD_LIBRARY)
+
 
 target_link_libraries(GRIDInterpreter 
 "/usr/lib64/libmysqlcppconn.so"
