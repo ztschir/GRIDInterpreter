@@ -49,10 +49,11 @@ ConfigValues getConfigFileSettings(){
     }
     if(cfg.keyExists(DELETE_LOG_FILES_AFTER_IMPORT)){
         string deleteValStr = cfg.getValueOfKey(DELETE_LOG_FILES_AFTER_IMPORT);
-        int deleteVal;
+        int deleteVal = -1;
         
         stringstream convert(deleteValStr);
-        if (!(convert >> deleteVal)){
+        convert >> deleteVal;
+        if (deleteVal == -1){
             cout << "Invalid value for delete files after import option" << endl;
             exit(1);
         }
