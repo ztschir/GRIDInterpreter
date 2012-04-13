@@ -8,7 +8,7 @@ REQUIREMENTS
 
 Linux/Unix -            Almost any version of linux/unix is needed, specificly for one line of code, 
                             I may change this if needed in the future
-MySQL server >= v5.1 -  Either MySQL server running locally, or the IP address of a server running remotely.
+MySQL server >= v5.6 -  Either MySQL server running locally, or the IP address of a server running remotely. This needs to be higher than 5.6.4 to fix the 				microsecond bug found when trying to store intervals smaller than a second in a DATETIME/DATE field
 libstdc++5 -            Needed to compile the source code.
 CMake v2.6 or higher -  Needed to create the makeFile in order to compile the source code.
 
