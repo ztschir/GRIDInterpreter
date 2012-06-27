@@ -12,14 +12,14 @@
 #ifndef GRIDInterpreter_TypeIdentifiers_h
 #define GRIDInterpreter_TypeIdentifiers_h
 
-#include <cppconn/driver.h>
-#include <cppconn/exception.h>
-#include <cppconn/warning.h>
-#include <cppconn/metadata.h>
-#include <cppconn/prepared_statement.h>
-#include <cppconn/resultset.h>
-#include <cppconn/resultset_metadata.h>
-#include <cppconn/statement.h>
+#include "lib/cppconn/driver.h"
+#include "lib/cppconn/exception.h"
+#include "lib/cppconn/warning.h"
+#include "lib/cppconn/metadata.h"
+#include "lib/cppconn/prepared_statement.h"
+#include "lib/cppconn/resultset.h"
+#include "lib/cppconn/resultset_metadata.h"
+#include "lib/cppconn/statement.h"
 #include "mysql_driver.h"
 
 #include <sys/types.h>

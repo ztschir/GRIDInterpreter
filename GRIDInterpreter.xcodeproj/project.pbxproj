@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E007DCA1159B783000937D48 /* libmysqlcppconn.1.0.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E007DCA0159B783000937D48 /* libmysqlcppconn.1.0.5.dylib */; };
+		E007DCA3159B789800937D48 /* libmysqlcppconn.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E007DCA2159B789800937D48 /* libmysqlcppconn.1.dylib */; };
+		E007DCA5159B78A300937D48 /* libmysqlcppconn.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E007DCA4159B78A300937D48 /* libmysqlcppconn.dylib */; };
 		E0140AA71505940C00DF2874 /* CMakeLists.txt in Sources */ = {isa = PBXBuildFile; fileRef = E0140AA61505940C00DF2874 /* CMakeLists.txt */; };
 		E0140AAF1505CBE300DF2874 /* Importer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0140AAE1505CBE300DF2874 /* Importer.cpp */; };
 		E01980F214F1784800E22D64 /* GRIDInterpreter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E01980F114F1784800E22D64 /* GRIDInterpreter.cpp */; };
 		E046983B14E99E2000C04B45 /* TableColumnValues.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E046983A14E99E2000C04B45 /* TableColumnValues.cpp */; };
 		E046984214EAC2EC00C04B45 /* TableColumns.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E046984114EAC2EC00C04B45 /* TableColumns.cpp */; };
 		E060D56014E0E81A0040F31D /* GRIDInterpreter.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = E060D55F14E0E81A0040F31D /* GRIDInterpreter.1 */; };
-		E060D6B014E231720040F31D /* libmysqlcppconn.1.0.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E060D6AD14E231720040F31D /* libmysqlcppconn.1.0.5.dylib */; };
-		E060D6B114E231720040F31D /* libmysqlcppconn.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E060D6AE14E231720040F31D /* libmysqlcppconn.1.dylib */; };
-		E060D6B214E231720040F31D /* libmysqlcppconn.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E060D6AF14E231720040F31D /* libmysqlcppconn.dylib */; };
 		E0B6A02E14FD83B0003D435D /* DataFileReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0B6A02D14FD83B0003D435D /* DataFileReader.cpp */; };
 		E0F1B57314EC200D009B5421 /* ConfigFileReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0F1B57214EC200D009B5421 /* ConfigFileReader.cpp */; };
 /* End PBXBuildFile section */
@@ -34,6 +34,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E007DCA0159B783000937D48 /* libmysqlcppconn.1.0.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmysqlcppconn.1.0.5.dylib; path = GRIDInterpreter/lib/libmysqlcppconn.1.0.5.dylib; sourceTree = SOURCE_ROOT; };
+		E007DCA2159B789800937D48 /* libmysqlcppconn.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmysqlcppconn.1.dylib; path = lib/libmysqlcppconn.1.dylib; sourceTree = "<group>"; };
+		E007DCA4159B78A300937D48 /* libmysqlcppconn.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmysqlcppconn.dylib; path = lib/libmysqlcppconn.dylib; sourceTree = "<group>"; };
 		E00B74661512A78D009E7950 /* build_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = build_config.h; sourceTree = "<group>"; };
 		E00B74671512A78D009E7950 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 		E00B74681512A78D009E7950 /* connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = connection.h; sourceTree = "<group>"; };
@@ -60,9 +63,6 @@
 		E04AEB3F14F2D5D0002A66CB /* ConfigValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigValues.h; sourceTree = "<group>"; };
 		E060D55914E0E81A0040F31D /* GRIDInterpreter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GRIDInterpreter; sourceTree = BUILT_PRODUCTS_DIR; };
 		E060D55F14E0E81A0040F31D /* GRIDInterpreter.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = GRIDInterpreter.1; sourceTree = "<group>"; };
-		E060D6AD14E231720040F31D /* libmysqlcppconn.1.0.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmysqlcppconn.1.0.5.dylib; path = usr/local/lib/libmysqlcppconn.1.0.5.dylib; sourceTree = SDKROOT; };
-		E060D6AE14E231720040F31D /* libmysqlcppconn.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmysqlcppconn.1.dylib; path = usr/local/lib/libmysqlcppconn.1.dylib; sourceTree = SDKROOT; };
-		E060D6AF14E231720040F31D /* libmysqlcppconn.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmysqlcppconn.dylib; path = usr/local/lib/libmysqlcppconn.dylib; sourceTree = SDKROOT; };
 		E0640AA4151530040089DCFF /* gridinterpreter.config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = gridinterpreter.config; path = GRIDInterpreter/gridinterpreter.config; sourceTree = "<group>"; };
 		E0A20F3A14FC3293009BD594 /* TypeIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeIdentifiers.h; sourceTree = "<group>"; };
 		E0B6A02D14FD83B0003D435D /* DataFileReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DataFileReader.cpp; sourceTree = "<group>"; };
@@ -79,9 +79,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E060D6B014E231720040F31D /* libmysqlcppconn.1.0.5.dylib in Frameworks */,
-				E060D6B114E231720040F31D /* libmysqlcppconn.1.dylib in Frameworks */,
-				E060D6B214E231720040F31D /* libmysqlcppconn.dylib in Frameworks */,
+				E007DCA1159B783000937D48 /* libmysqlcppconn.1.0.5.dylib in Frameworks */,
+				E007DCA3159B789800937D48 /* libmysqlcppconn.1.dylib in Frameworks */,
+				E007DCA5159B78A300937D48 /* libmysqlcppconn.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,12 +115,12 @@
 				E00B74651512A78D009E7950 /* cppconn */,
 				E00B74731512A78D009E7950 /* mysql_connection.h */,
 				E00B74741512A78D009E7950 /* mysql_driver.h */,
+				E007DCA0159B783000937D48 /* libmysqlcppconn.1.0.5.dylib */,
+				E007DCA2159B789800937D48 /* libmysqlcppconn.1.dylib */,
+				E007DCA4159B78A300937D48 /* libmysqlcppconn.dylib */,
 				E0B8A28F1503F557006B0866 /* libmysqlcppconn.so.1.0.5 */,
 				E0B8A2901503F558006B0866 /* libmysqlcppconn.so.1.0.5 */,
 				E0B8A2911503F558006B0866 /* libmysqlcppconn.so.1.0.5 */,
-				E060D6AD14E231720040F31D /* libmysqlcppconn.1.0.5.dylib */,
-				E060D6AE14E231720040F31D /* libmysqlcppconn.1.dylib */,
-				E060D6AF14E231720040F31D /* libmysqlcppconn.dylib */,
 			);
 			name = lib;
 			path = GRIDInterpreter;

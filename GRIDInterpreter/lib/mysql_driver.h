@@ -12,7 +12,7 @@
 #ifndef _MYSQL_DRIVER_H_
 #define _MYSQL_DRIVER_H_
 
-#include <cppconn/driver.h>
+#include "cppconn/driver.h"
 
 
 namespace sql
