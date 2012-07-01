@@ -84,7 +84,7 @@ void Importer::importChannelData(int receiverID, string directoryPath){
     channel.addTableColumnDouble("beat_carrier_phase");
     channel.addTableColumnDouble("pseudorange");
     channel.addTableColumnDouble("carrier_to_noise_ratio");
-    channel.addTableColumnInt("isValid_pseudorange_and_phase");
+    channel.addTableColumnInt("is_valid_pseudorange_and_phase");
     channel.addTableColumnInt("is_anomaly_detected");
     channel.addTableColumnInt("channel_status_id");
     channel.addTableColumnInt("signal_type_id");
@@ -183,7 +183,7 @@ void Importer::importTXInfoData(int receiverID, string directoryPath){
     
     txInfo.addTableColumnDouble("azmiuth");
     txInfo.addTableColumnDouble("elevation");
-    txInfo.addTableColumnInt("healthStatus_id");
+    txInfo.addTableColumnInt("health_status_id");
     txInfo.addTableColumnInt("transmitter_system_id");
     txInfo.addTableColumnInt("transmitter_id");
     
